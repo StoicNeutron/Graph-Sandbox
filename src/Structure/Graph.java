@@ -1,6 +1,9 @@
 package Structure;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
 
 /**
  *This class represent the entire graph formed by nodes(JButtons), all graph algorithms will be implement here.
@@ -118,10 +121,28 @@ public class Graph {
             return -2;
         }
     }
+
     
+
     //Breadth First Search Algorithm
     public void BFS(Node startNode, Node destinationNode){
-        
-        
+        //if found
+        if(startNode.ID.equalsIgnoreCase(destinationNode.ID)){
+            return 1;
+        }
+
+        LinkedList<Node> queue = new LinkedList<>();
+
+        queue.add(startNode);
+
+        while(!queue.isEmpty()){
+            new Node = queue.poll();
+            for(int i=0;i < startNode.adjacencies.size(); i++){
+                if(Node.adjacencies.get(i).visited==0){
+                    queue.add(Node.adjacencies.get(i));
+                }
+            }
+        }
+        return 0;
     }
 }
