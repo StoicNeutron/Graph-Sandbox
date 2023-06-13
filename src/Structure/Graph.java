@@ -141,6 +141,9 @@ public class Graph {
                 if(Node.adjacencies.get(i).visited==0){
                     queue.add(Node.adjacencies.get(i));
                 }
+                if(Node.adjacencies.get(i).ID.equalsIgnoreCase(destinationNode.ID)){
+                    return 1;
+                }
             }
         }
         return 0;
